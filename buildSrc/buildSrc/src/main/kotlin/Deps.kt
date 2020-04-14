@@ -4,7 +4,10 @@ object Deps {
         object Kotlin : Group(name = "org.jetbrains.kotlin") {
             private const val version = "1.3.70"
 
-            object Plugin : Dependency(group = Kotlin, name = "kotlin-gradle-plugin", version = version)
+            object Plugin {
+                object Gradle : Dependency(group = Kotlin, name = "kotlin-gradle-plugin", version = version)
+                object Serialization : Dependency(group = Kotlin, name = "kotlin-serialization", version = version)
+            }
 
             object StdLib {
                 object Common : Dependency(group = Kotlin, name = "kotlin-stdlib-common", version = version)
